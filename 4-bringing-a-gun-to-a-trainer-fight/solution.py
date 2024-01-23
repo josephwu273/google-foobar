@@ -6,6 +6,7 @@ def gcd(a, b):
 	    a, b = b, a%b
 	return abs(a)
 
+
 class Point:
     def __init__(self, *args):
         #single argument passed in as an iterable
@@ -39,11 +40,14 @@ class Point:
         g = gcd(x,y)
         return [x/h, y/g]
 
+
 class Guard(Point):
     pass
 
+
 class Player(Point):
     pass
+
 
 class Room:
     def __init__(self, xlen, ylen, player, guard):
@@ -53,7 +57,7 @@ class Room:
         self.guard = guard
     
     def expand_room(self):
-        foo = self.dist/xlen+1
+        foo = self.dist/xlen+1 # ceil()
         bar = self.dist/ylen+1
         fake_players = []
         fake_guards = []
